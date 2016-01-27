@@ -2,6 +2,3 @@ source https://nuget.org/api/v2
 
 nuget FAKE
 nuget Suave
-nuget Suave.Dotliquid
-nuget FSharp.Data
-nuget FSharp.Compiler.Service
