@@ -9,7 +9,7 @@ open Suave.Web
 open System.Net
 
 let serverConfig =
-  let port = 888 //int (Environment.GetEnvironmentVariable("PORT"))
+  let port = int (Environment.GetEnvironmentVariable("PORT"))
   { Web.defaultConfig with
       homeFolder = Some __SOURCE_DIRECTORY__
       logger = Logging.Loggers.saneDefaultsFor Logging.LogLevel.Warn
