@@ -22,8 +22,7 @@ open Suave.DotLiquid
 
   
 let serverConfig = 
-    let port = getBuildParamOrDefault "port" "8083" |> Sockets.Port.Parse
-    { defaultConfig with bindings = [ HttpBinding.mk HTTP IPAddress.Loopback port ] }
+    { defaultConfig with bindings = [ HttpBinding.mkSimple HTTP "127.0.0.1" 80] }
 
 startWebServer serverConfig (OK "Hello")
 
