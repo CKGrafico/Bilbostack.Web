@@ -53,8 +53,3 @@ let app : WebPart = fun ctx -> async {
   DotLiquid.setTemplatesDir("./site")
   return! DotLiquid.page "index.html" { Movies = movies } ctx }
   
-let serverConfig = 
-    let port = getBuildParamOrDefault "port" "8083" |> Sockets.Port.Parse
-    { defaultConfig with bindings = [ HttpBinding.mk HTTP IPAddress.Loopback port ] }
-
-startWebServer serverConfig app
