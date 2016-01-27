@@ -17,11 +17,16 @@ open Suave.Filters
 open Microsoft.FSharp.Compiler.Interactive.Shell
 
 // --------------------------------------------------------------------------------------
+// Run all targets by default. Invoke 'build <Target>' to override
+Target "deploy" DoNothing
+
+// --------------------------------------------------------------------------------------
 // The following uses FileSystemWatcher to look for changes in 'app.fsx'. When
 // the file changes, we run `#load "app.fsx"` using the F# Interactive service
 // and then get the `App.app` value (top-level value defined using `let app = ...`).
 // The loaded WebPart is then hosted at localhost:8083.
 // --------------------------------------------------------------------------------------
+
 let sbOut = new Text.StringBuilder()
 let sbErr = new Text.StringBuilder()
 

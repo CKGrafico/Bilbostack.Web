@@ -70,7 +70,7 @@ IF !ERRORLEVEL! NEQ 0 goto error
 :: Run  FAKE build script
 :: ----------------------
 
-packages\FAKE\tools\FAKE.exe build.fsx
+packages\FAKE\tools\FAKE.exe build.fsx deploy
 IF !ERRORLEVEL! NEQ 0 goto error
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
