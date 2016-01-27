@@ -51,7 +51,6 @@ let getMovies() =
 
 let app : WebPart = fun ctx -> async {
   let movies = getMovies()
-  DotLiquid.setTemplatesDir("./templates")
   return! DotLiquid.page "index.html" { Movies = movies } ctx }
   
 let serverConfig = 
