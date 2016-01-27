@@ -1,6 +1,9 @@
-# suave.io on Azure
+# F# Films: Simple Suave demo web application with type providers
+
+A simple Suave.io web application using F# and FAKE to deploy in Azure Web Apps and Heroku with Git and the Deploy Button
 
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 This repository shows how to use [FAKE](https://github.com/fsharp/FAKE), [Paket](https://github.com/fsprojects/Paket) and [KuduSync](https://github.com/projectkudu/KuduSync) to deploy a [suave.io](http://suave.io/) website to Azure.
 
