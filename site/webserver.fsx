@@ -9,7 +9,6 @@ open Fake
 open Suave
 open Suave.Http.Successful
 open Suave.Web
-open Suave.Types
 open System.Net
 
 let serverConfig = 
