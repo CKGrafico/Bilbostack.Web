@@ -7,7 +7,7 @@
 
 open Fake
 open Suave
-open Suave.Http.Successful
+open Suave.Successful
 open Suave.Web
 open System.Net
 
