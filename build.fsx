@@ -46,7 +46,7 @@ let reportFsiError (e:exn) =
 let reloadScript () =
   try
     traceImportant "Reloading app.fsx script..."
-    let appFsx = __SOURCE_DIRECTORY__ @@ "/site/app.fsx"
+    let appFsx = __SOURCE_DIRECTORY__ @@ "/app.fsx"
     fsiSession.EvalInteraction(sprintf "#load @\"%s\"" appFsx)
     fsiSession.EvalInteraction("open App")
     match fsiSession.EvalExpression("app") with

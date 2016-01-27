@@ -1,4 +1,4 @@
-#load "./site/app.fsx"
+#load "./app.fsx"
 
 open App
 open Fake
