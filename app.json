@@ -1,5 +1,5 @@
 {
-  "name": "F# Films: Powered by type providers",
+  "name": "F# Films",
   "description": "A simple Suave.io web application that supports Azure and Heroku deployment",
   "website": "http://suave.io/",
   "repository": "https://github.com/acasquete/???",
