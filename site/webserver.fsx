@@ -16,6 +16,8 @@ open Suave.Filters
 open Suave.Operators
 open FSharp.Data
 open Suave.DotLiquid
+open System.Net
+
 
 type Movies =
   { Id: int
