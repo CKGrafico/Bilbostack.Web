@@ -1,8 +1,12 @@
 #load "./site/app.fsx"
 
 open App
+open Fake
 open System
 open Suave
+open Suave.Successful 
+open Suave.Web  
+open System.Net
 
 let serverConfig =
   let port = int (Environment.GetEnvironmentVariable("PORT"))
