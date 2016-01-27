@@ -2,11 +2,11 @@
 // Start up Suave.io
 // --------------------------------------------------------------------------------------
 #r "System.Xml.Linq"
-#r "./packages/FAKE/tools/FakeLib.dll"
-#r "./packages/FSharp.Data/lib/net40/FSharp.Data.dll"
-#r "./packages/Suave/lib/net40/Suave.dll"
-#r "./packages/Suave.DotLiquid/lib/net40/Suave.DotLiquid.dll"
-#r "./packages/DotLiquid/lib/net40/DotLiquid.dll"
+#r "packages/FAKE/tools/FakeLib.dll"
+#r "packages/FSharp.Data/lib/net40/FSharp.Data.dll"
+#r "packages/Suave/lib/net40/Suave.dll"
+#r "packages/Suave.DotLiquid/lib/net40/Suave.DotLiquid.dll"
+#r "packages/DotLiquid/lib/net40/DotLiquid.dll"
 
 open Fake
 open Suave                 

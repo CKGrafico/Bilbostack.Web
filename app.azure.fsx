@@ -1,5 +1,5 @@
 #r "packages/FAKE/tools/FakeLib.dll"
-#load "./app.fsx"
+#load "app.fsx"
 
 open App
 open Fake
