@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
     <style type="text/css">
-        body {
+        /*body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, serif;
         }
 
@@ -22,32 +22,34 @@
             font-size: 14pt;
         }
 
-        .weather ul, .news ul {
+        .weather ul, .movies ul {
             margin: 0px;
             padding: 0px;
         }
 
-        .weather li, .news li {
+        .weather li, .movies li {
             list-style: none;
-            padding: 0px;
+            padding: 10px;
             margin: 0px;
         }
 
-        
-
-        .movies img, .weather img {
-            float: left;
-            margin-right: 20px;
-        }
-
-        .movies img {
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
+        .movies li {
+      min-height: 310px;
+    }
+    .movies img, .weather img {
+      float: left;
+      margin-right:20px;
+    }
+    .movies img {
+      margin-top:10px;
+      margin-bottom:20px;
+    }
 
         .weather p {
             margin: 0px;
         }
+        */
+
     </style>
 </head>
 <body>
@@ -55,15 +57,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>F# Films</h1>
+                    <h1>F#ilms</h1>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 movies">
-                <ul>
+                <ul class="list-inline">
                     {% for item in model.Movies %}
                     <li>
                         <img src="{{ item.Poster }}" />
@@ -74,6 +76,19 @@
                 </ul>
             </div>
         </div>
+        <div class="row">
+      <div class="col-md-8 news">
+        <ul>
+          {% for item in model.News %}
+            <li>
+              <img src="{{ item.ThumbUrl }}" />
+              <h3><a href="{{ item.LinkUrl }}">{{ item.Title }}</a></h3>
+              <p>{{ item.Description }}</p>
+            </li>
+          {% endfor item %}
+        </ul>
+      </div>
+      </div>
     </div>
 </body>
 </html>

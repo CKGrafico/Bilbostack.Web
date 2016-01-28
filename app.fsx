@@ -27,7 +27,15 @@ type Movies =
     ReleaseDate : System.DateTime
   }
 
-type Home = { Movies: seq<Movies> }
+type News =
+  { ThumbUrl : string
+    LinkUrl : string
+    Title : string
+    Description : string }
+    
+type Home = { 
+    Movies: seq<Movies>
+    News: seq<News> }
 
 
 // TODO: Get current news from BBC
@@ -47,9 +55,26 @@ let getMovies() =
         ReleaseDate = item.ReleaseDate
          } ] 
 
+// ----------------------------------------------------------------------------
+// Getting News from RSS feed and formatting it
+// ----------------------------------------------------------------------------
+
+type RSS = XmlProvider<"http://feeds.bbci.co.uk/news/rss.xml">
+
+let getNews() = async {
+  let! res = RSS.AsyncGetSample()
+  return
+    [ for item in res.Channel.Items |> Seq.take 15 do
+      if item.Thumbnails |> Seq.length > 0 then
+        let thumb = item.Thumbnails |> Seq.maxBy (fun t -> t.Width)
+        yield
+          { ThumbUrl = thumb.Url; LinkUrl = item.Link;
+            Title = item.Title; Description = item.Description } ] }
+
 
 let app : WebPart = fun ctx -> async {
   let movies = getMovies()
+  let! news = getNews()
   DotLiquid.setTemplatesDir("./site")
-  return! DotLiquid.page "index.html" { Movies = movies } ctx }
+  return! DotLiquid.page "index.html" { Movies = movies; News = news } ctx }
   
